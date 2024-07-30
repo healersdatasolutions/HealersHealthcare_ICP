@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "rust_test_backend": {
+      "candid": "src/rust_test_backend/rust_test_backend.did",
+      "package": "rust_test_backend",
+      "type": "rust"
+    },
+    "rust_test_frontend": {
+      "dependencies": [
+        "rust_test_backend"
+      ],
+      "source": [
+        "src/rust_test_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "rust_test_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

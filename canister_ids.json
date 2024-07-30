@@ -1,0 +1,8 @@
+{
+  "rust_test_backend": {
+    "ic": "sib3p-eiaaa-aaaap-qhp4a-cai"
+  },
+  "rust_test_frontend": {
+    "ic": "spa53-jqaaa-aaaap-qhp4q-cai"
+  }
+}
