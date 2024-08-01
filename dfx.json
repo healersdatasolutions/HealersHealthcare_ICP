@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "healers_backend": {
+      "candid": "src/healers_backend/healers_backend.did",
+      "package": "healers_backend",
+      "type": "rust"
+    },
+    "healers_frontend": {
+      "dependencies": [
+        "healers_backend"
+      ],
+      "source": [
+        "src/healers_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "healers_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
