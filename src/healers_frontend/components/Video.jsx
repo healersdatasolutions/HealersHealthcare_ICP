@@ -1,25 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "pexels";
-
-
 
 export default function Video(params) {
   const [videoSrc, setVideoSrc] = useState("");
 
   useEffect(() => {
-    const client = createClient(
-      "LhtJn3NVHtJDEqtFWxsGGSWSMit93xRD4bxm9gnpsxHws1V9tGd4McA0"
-    );
-    const query = "consultation man woman doctor clinic cedric sofa";
+    const fetchVideo = async () => {
+      const API_KEY = "LhtJn3NVHtJDEqtFWxsGGSWSMit93xRD4bxm9gnpsxHws1V9tGd4McA0";
+      const query = "consultation man woman doctor clinic cedric sofa";
+      const url = `https://api.pexels.com/videos/search?query=${query}&per_page=1`;
 
-    client.videos.search({ query, per_page: 1 }).then((response) => {
-      if (response?.videos?.length > 0) {
-        const videoUrl = response.videos[0].video_files[0].link;
+      const response = await fetch(url, {
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
+      const data = await response.json();
+
+      if (data?.videos?.length > 0) {
+        const videoUrl = data.videos[0].video_files[0].link;
         setVideoSrc(videoUrl);
       }
-    });
+    };
+
+    fetchVideo();
   }, []);
 
   console.log(videoSrc);
