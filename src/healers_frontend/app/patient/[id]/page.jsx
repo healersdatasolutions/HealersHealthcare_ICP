@@ -16,6 +16,7 @@ import injured from "../../../public/injured.svg";
 import Image from "next/image";
 import PdfViewer from "./components/PdfViewer";
 import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 
 export default function Patient() {
   const [patient, setPatient] = useState(null);
@@ -365,6 +366,7 @@ export default function Patient() {
           </div>
         </Dialog>
       </Transition>
+    <Footer/>
     </>
   );
 }

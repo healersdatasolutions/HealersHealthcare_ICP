@@ -18,7 +18,7 @@ import {
 const navigation = [
   { name: "About", href: "/" },
   { name: "Health Records", href: "/ehr" },
-  { name: "Doctors", href: "" },
+  { name: "Doctors", href: "/doctor-dashboard" },
   { name: "Services", href: "" },
   { name: "Contact Us", href: "" },
 ];
